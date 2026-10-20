@@ -1,16 +1,13 @@
-# React + Vite
+## Challenges Faced & Solutions
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. **Project Hierarchy & Git Tracking:**
+   - *Issue:* During initial scaffolding with Vite inside GitHub Codespaces, a duplicate nested folder (`Assignement_5_Product_Dashboard/Assignement_5_Product_Dashboard`) was inadvertently created. Moving the component files and root configuration files caused Git to stage the original files as deleted and list the root files as untracked, temporarily bundling `Card.jsx` into an earlier setup commit.
+   - *Solution:* Flattened the directory structure using the command line (`mv` and directory cleanups), staged the changes systematically, and ensured subsequent components (`Product.jsx`, `ProductList.jsx`, and `App.jsx`) were isolated into atomic, progressive Git commits.
 
-Currently, two official plugins are available:
+2. **Component Composition via `props.children`:**
+   - *Challenge:* Ensuring `Card.jsx` functioned strictly as an agnostic layout container without hardcoding or anticipating the data structure of `Product.jsx`.
+   - *Solution:* Used React's `children` prop to allow `Product.jsx` to inject its content directly while letting `Card` handle container styling, borders, and margins independently.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+3. **Controlled Input State Synchronization:**
+   - *Challenge:* Guaranteeing the input element remained purely controlled without direct DOM manipulation (`document.getElementById` or `useRef`).
+   - *Solution:* Bound the input's `value` directly to `name` state and updated it synchronously via the `onChange` event handler, keeping React state as the single source of truth.
