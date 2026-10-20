@@ -1,9 +1,0 @@
-[33m63e3532[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m)[m docs: add project structure explanation and challenges faced to README
-[33mc8495f1[m feat(app): add toggle button and conditional rendering for ProductList
-[33m4fea9fc[m feat(app): implement controlled name input and greeting in App
-[33m91045ac[m feat(components): render static product list using map with unique keys
-[33m3f959de[m feat(components): create Product presentational component with props
-[33me8a46dc[m feat(components): implement Card component with children composition
-[33m49820a4[m chore: restructure project to root directory and setup vite configuration
-[33m801097c[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m chore: initialize project with vite and react
-[33md9c34e8[m Initial commit
